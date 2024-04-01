@@ -1,0 +1,18 @@
+Package: gfwdata
+Type: Package
+Title: Global Fishing Watch data 
+Version: 0.1.0
+Author: Ben Tupper
+Maintainer: Ben Tupper <btupper@bigelow.org>
+URL: https://github.com/bigelowlab/gfwdata
+Description: R language tools to manage Global Fishing Watch data.
+License: MIT + file LICENSE
+Encoding: UTF-8
+RoxygenNote: 7.2.3
+Roxygen: list(markdown = TRUE)
+Imports:
+  rlang,
+  readr,
+  sf,
+  stars,
+  dplyr
