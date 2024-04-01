@@ -6,7 +6,7 @@
 \usage{
 set_root_path(
   path = "/mnt/s1/projects/ecocast/coredata/gfw",
-  filename = "~/.cgfwdata"
+  filename = "~/.gfwdata"
 )
 }
 \arguments{

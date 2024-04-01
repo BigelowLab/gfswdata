@@ -11,7 +11,7 @@ read_mmsi_daily = function(date = "2020-01-01",
                            path = gfw_path("mmsi-daily-csvs-10-v2-2020"),
                            form = c('raw', 'sf', 'stars')[1]){
   if (!inherits(date, "character")) date  = format(date, "%Y-%m-%d")
-  filename = file,path(path, paste0(date, ".csv"))
+  filename = file.path(path, paste0(date, ".csv"))
   
   x = readr::read_csv(filename, col_types = "Dnnnnn")
   
@@ -19,8 +19,8 @@ read_mmsi_daily = function(date = "2020-01-01",
     x = sf::st_as_sf(x, 
                      coords = c("cell_ll_lon", "cell_ll_lat"),
                      crs = 4326)
-    if (tolower(form[1]) == c("sf", "stars")){
-      x = stars::st_rasterize(dplyr::select(x, -dplyr::all_of("date"))
+    if (tolower(form[1]) ==  "stars"){
+      x = stars::st_rasterize(dplyr::select(x, -dplyr::all_of("date")))
     }
   }
   
